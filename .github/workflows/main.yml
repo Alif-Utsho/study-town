@@ -1,0 +1,42 @@
+name: FTP Deploy
+
+on:
+  push:
+    branches:
+      - master  # Triggers deployment on push to the 'master' branch
+
+jobs:
+  ftp-deploy:
+    name: Deploy to FTP Server
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Upload files to FTP server
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.1
+        with:
+          server: 'ftp.rscollectionbd.com'
+          username: 'StudyTown@studytown.rscollectionbd.com'
+          password: '0=X-3#YS@p6U'
+          port: 21
+          protocol: ftps  # Use 'ftp' if the server doesn't support FTPS
+          local-dir: ./   # The directory to upload from, usually the root of your repo
+          server-dir: /path/to/your/project/   # Directory on your server (adjust this)
+          exclude: |
+            .git*
+            .github*
+            vendor/
+            node_modules/
+            storage/logs/
+            storage/debugbar/
+          exclude-method: ignore  # Exclude the specified files/directories from deployment
+
+      # Step 3: Clean up old files on the server (optional, to prevent unused files from accumulating)
+      - name: Clean up old files
+        run: |
+          echo "Cleaning up old files on the server..."
+          # Customize this step based on your specific cleanup needs
