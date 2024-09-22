@@ -25,12 +25,11 @@ jobs:
           port: 21
           protocol: ftps  # Use 'ftp' if your server doesn't support FTPS
           local-dir: ./   # Root of your project
-          server-dir: /path/to/your/project  # Replace with your server path
+          server-dir: /home/rscollec/studytown.rscollectionbd.com/  # Ensure this is the correct path and ends with /
           exclude: |
-            **/.git*          # Exclude .git folder and all related files
-            **/.github*       # Exclude .github folder (CI workflows)
-            **/node_modules*  # Exclude node_modules if applicable
-            **/vendor*        # Exclude vendor if you run composer install on the server
-            **/storage/logs*  # Exclude logs
+            **/.git*              # Exclude .git folder and all related files
+            **/.github*           # Exclude .github folder (CI workflows)
+            **/node_modules*      # Exclude node_modules if applicable
+            **/vendor*            # Exclude vendor if you run composer install on the server
+            **/storage/logs*      # Exclude logs
             **/storage/debugbar*  # Exclude debugbar files
-          exclude-method: ignore  # Don't delete these files, just skip them
