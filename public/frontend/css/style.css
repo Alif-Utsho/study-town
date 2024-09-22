@@ -1,0 +1,537 @@
+/* common css start */
+.active::after {
+	content: """" !important;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Oswald", sans-serif;
+}
+body{
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    vertical-align: middle;
+    transition: 0.6s !important;
+}
+
+/* back to top button */
+#myBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    cursor: pointer;
+    background-color: #36BCCAFF;
+    color: #333;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  #myBtn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .arrow-up {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: solid #333;
+    border-width: 0 2px 2px 0;
+    transform: rotate(-135deg);
+  }
+  
+  /* preloader */
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: #353535c4;
+  }
+  
+  #preloader #preloader-inner {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #3498db;
+    animation: spin 2s linear infinite
+  }
+  
+  #preloader #preloader-inner:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #e74c3c;
+    animation: spin 3s linear infinite
+  }
+  
+  #preloader #preloader-inner:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #f9c922;
+    animation: spin 1.5s linear infinite
+  }
+  @keyframes 
+  spin { 0% {
+  transform:rotate(0deg)
+  }
+  
+  to { transform: rotate(1turn) }
+  }
+
+/* common css end */
+/* navbar */
+.navbar {
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+	background-color: #ffffff82;
+}
+.navbar-brand img{
+  width: 123px !important;
+  height: 80px;
+
+}
+.nav-bg {
+	background-color: white !important;
+	box-shadow: 1px 1px 5px 0 grey;
+}
+.nav-link{
+  color: black !important;
+  font-weight: 500;
+  transition: 0.4s ease-in-out;
+  font-size: 17px;
+}
+.nav-link:hover{
+  color: rgba(0, 0, 0, 0.63) !important;
+}
+/* navbar */
+/* banner */
+#banner{
+  height: 600px;
+  position: relative;
+}
+.over-lay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #00000085;
+}
+.banner-content {
+	position: absolute;
+	top: 60%;
+	width: 700px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.banner-content h2{
+  color: white !important;
+  z-index: 99;
+  font-size: 42px;
+  padding-bottom: 20px;
+}
+.banner-content a{
+  padding: 8px 20px;
+  font-size: 18px;
+  background-color: white;
+  color: black;
+  transition: 0.4s ease-in-out;
+  border-radius: 5px;
+  background: linear-gradient(to right, #B88746, grey);
+  animation: gradientAnimation 3s infinite;
+}
+.banner-content a:hover{
+  background: linear-gradient(to left, #B88746, grey);
+ color: black;
+}
+@keyframes gradientAnimation {
+  0% {
+    background: linear-gradient(to right, #B88746, grey);
+  }
+  50% {
+    background: linear-gradient(to right, grey, #B88746);
+  }
+  100% {
+    background: linear-gradient(to right, #B88746, grey);
+  }
+}
+.banner-content p{
+  color: white !important;
+ padding-top: 20px;
+}
+/* banner */
+/* about */
+#about{
+  padding: 40px;
+}
+.about-img img {
+	height: 250px;
+	border-radius: 20px;
+	box-shadow: 1px 1px 1px 0 grey;
+	border-top-left-radius: 100px;
+	border-bottom-right-radius: 100px;
+}
+.about-content{
+  padding: 30px;
+}
+
+.about-content h3{
+  color: linear-gradient(to right, #B88746, grey);
+  font-size: 30px;
+}
+.about-content p{
+  color: grey;
+}
+.about-content a{
+  padding: 5px 12px;
+  background-color: #B88746;
+  border-radius: 5px;
+  color: white;
+  font-weight: 500;
+  border: 2px solid transparent;
+  transition: 0.4s ease-in-out;
+}
+.about-content a:hover{
+  color: black;
+  background-color: transparent;
+  border: 2px solid #B88746;
+}
+
+/* about */
+
+/* service */
+#services{
+  padding-top:20px ;
+  padding-bottom: 30px;
+}
+.services-icon img{
+   height: 65px;
+}
+.studytown-head-main p {
+	color: grey;
+	font-weight: 400;
+	width: 500px;
+	margin: auto;
+}
+.service-inner{
+  display: flex;
+  gap: 16px;
+  /* border: 1px solid #ddd;
+  box-shadow: 0 1px 1px 0 #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  background: linear-gradient(73deg, white, rgba(128, 128, 128, 0.589)) !important;
+  transition: 0.4s ease-in-out; */
+}
+/* .service-inner:hover{
+  background: linear-gradient(73deg, #b887469e, white) !important;
+  cursor: pointer;
+
+} */
+ .gapp{
+  row-gap: 30px;
+ }
+
+.services-content h4{
+  color: #B88746;
+  font-weight: 600;
+}
+.services-content p{
+  color: black;
+  font-weight: 400;
+}
+/* service */
+
+/* courses */
+#courses{
+  background: linear-gradient(to right, #b88746ee, rgba(255, 255, 255, 0.963)) !important;
+  padding: 30px 0;
+}
+.courses-main{
+  border: 1px solid #ddd;
+  border-radius: 10px;
+ background-color: white;
+  padding: 10px;
+  transition: 0.4s ease-in-out;
+  box-shadow: 3px 4px 5px -3px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 3px 4px 5px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 4px 5px -3px rgba(0,0,0,0.75);
+  padding-bottom: 15px;
+}
+.course-img {
+	overflow: hidden;
+}
+.course-img img {
+	height: 160px;
+  transition: 0.4s ease-in-out;
+}
+.course-img img:hover {
+	 transform: scale(1.05);
+}
+
+.courses-main h5{
+  color: black;
+  padding-bottom: 15px;
+}
+
+.course-seemore-btn a{
+  padding: 8px 20px;
+  background-color: white;
+  border: 2px solid transparent;
+  color: black;
+  font-weight: 600;
+  transition: 0.4s ease-in-out;
+  border-radius: 5px;
+}
+.course-seemore-btn a:hover{
+ background-color: black;
+ color: white;
+}
+/* courses */
+
+/* apply */
+#apply{
+  padding: 30px 0;
+  background: linear-gradient(to right, #b88746ee, rgba(255, 255, 255, 0.963)) !important;
+  
+}
+.form-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 3px 4px 5px -3px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 3px 4px 5px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 4px 5px -3px rgba(0,0,0,0.75);
+
+}
+.form-group {
+	margin-bottom: 1rem;
+}
+.form-control {
+  border-radius: 10px;
+  padding: 12px;
+}
+label {
+  font-weight: bold;
+}
+.submit-btn {
+  background-color: #B88746;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+.apply-img img{
+  border-bottom-left-radius: 150px;
+  border-top-right-radius: 150px;
+  height: 310px;
+}
+.apply-imgg img{
+  border-bottom-right-radius: 150px !important;
+  border-top-left-radius: 150px !important;
+  height: 310px;
+}
+.concern-img{
+ 
+  overflow: hidden;
+  padding: 15px;
+}
+.concern-img img{
+  height: 145px;
+  transition: 0.4s ease-in-out;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.concern-img img:hover{
+ transform: scale(1.05);
+}
+
+
+/* apply */
+
+/* concern */
+#concern{
+  position: relative;
+  padding: 40px 0;
+}
+.prev{
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  font-size: 25px;
+  cursor: pointer;
+  z-index: 9;
+}
+.next{
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  font-size: 25px;
+  cursor: pointer;
+  z-index: 9;
+}
+
+
+/* concern */
+
+/* Footer */
+#footer{
+  background: linear-gradient(to right, rgba(128, 128, 128, 0.495), rgba(255, 255, 255, 0.963)) !important;
+  padding: 30px;
+}
+.social-icon{
+  display: flex;
+}
+.social-icon li a img{
+  width: 50%;
+  margin: auto;
+}
+.footer-content ul li {
+  padding-bottom: 7px;
+  font-weight: 500;
+}
+.footer-content ul li span{
+  font-weight: 400;
+}
+.footer-logo img{
+  height: 125px;
+}
+.book-inner{
+  padding: 40px;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
+border-radius: 10px;
+}
+.book-img img{
+  width: 78px;
+}
+.book-btn a{
+  background-color: #B88746;
+  color: white;
+  font-size: 17px;
+  padding: 7px 20px;
+  border: 2px solid transparent;
+}
+/* footer */
+
+
+/* all course page */
+#allcourses{
+  background: linear-gradient(to right, #b88746ee, rgba(255, 255, 255, 0.963)) !important;
+  padding: 30px 0;
+    padding-top: 30px;
+  padding-top: 130px;
+}
+/* all course page */
+
+/* about page */
+#about-page{
+  padding-top: 130px;
+  padding-bottom: 30px;
+}
+.about-head{
+  background: linear-gradient(to right, #b88746ee, rgba(255, 255, 255, 0.963)) !important;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.aboutt-img img{
+  border-top-right-radius: 150px;
+  border-bottom-left-radius: 150px;
+}
+.about-text{
+  padding-top: 30px;
+}
+.mission-img img{
+  border-radius: 100px;
+  height: 260px;
+}
+.mission-text p{
+  padding: 40px;
+}
+/* about page */
+
+/* CONTACT PAGE */
+#contact{
+  padding-top: 130px;
+  padding-bottom: 30px;
+}
+.map iframe{
+  border-radius: 10px;
+}
+/* CONTACT PAGE */
+/* service page */
+#services-page {
+	padding-top: 130px;
+	background: linear-gradient(to right, #b88746ee, rgba(255, 255, 255, 0.963)) !important;
+	padding-bottom: 30px;
+}
+.student-c-img img {
+	border-radius: 20px;
+	height: 360px;
+}
+.service-text h4{
+  padding-bottom: 10px;
+}
+/* service page */
+/* apply */
+.applyy-img{
+padding-top: 100px;
+}
+/* apply */
+
+.courses-main a{
+  padding: 5px 10px;
+  background-color: black;
+  border: 2px solid transparent;
+  color: white;
+  transition: 0.4s ease-in-out;
+  border-radius: 5px;
+}
+.courses-main a:hover{
+  background-color: transparent;
+  border: 2px solid black;
+  color: black;
+}
+
+

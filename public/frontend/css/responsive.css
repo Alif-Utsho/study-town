@@ -1,0 +1,295 @@
+@media (max-width: 575.98px) {
+    /* index */
+    .banner-content {
+        position: absolute;
+        top: 66%;
+        width: auto;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .banner-content h2 {
+        font-size: 22px;
+        padding-bottom: 20px;
+        width: 300px;
+    }
+    #banner {
+        height: 400px;
+    }
+    #about {
+        padding-top: 25px !important;
+        padding-bottom: 30px;
+    }
+    .about-content {
+        padding: 0;
+    }
+    .about-img img {
+        height: 200px;
+        border-radius: 20px;
+        box-shadow: 1px 1px 1px 0 grey;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .course-img img {
+        height: 190px;
+        transition: 0.4s ease-in-out;
+    }
+    .banner-content a {
+        padding: 6px 14px;
+        font-size: 15px;
+        background-color: white;
+        color: black;
+        transition: 0.4s ease-in-out;
+        border-radius: 5px;
+        background: linear-gradient(to right, #B88746, grey);
+        animation: gradientAnimation 3s infinite;
+    }
+    .studytown-head-main p {
+        color: grey;
+        font-weight: 400;
+        width: auto;
+        margin: auto;
+    }
+    #services {
+        padding-top: 36px;
+        background: linear-gradient(to right, #b88746ee, rgba(255, 255, 255, 0.963)) !important;
+        padding-bottom: 30px;
+    }
+    .next {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        font-size: 25px;
+        cursor: pointer;
+        z-index: 9;
+        background: #000000ab;
+        color: white;
+        padding: 5px;
+    }
+    .prev {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        font-size: 25px;
+        cursor: pointer;
+        z-index: 9;
+        background: #000000ab;
+        color: white;
+        padding: 5px;
+    }
+    .book-inner {
+        padding: 40px;
+        display: block;
+        gap: 50px;
+        align-items: center;
+        box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
+        -webkit-box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
+        border-radius: 10px;
+    }
+    .navbar {
+        position: fixed;
+        width: 100%;
+        z-index: 999;
+        background-color: white;
+    }
+    .navbar-brand img {
+        width: 90px !important;
+        height: 60px;
+    }
+    /* index */
+    /* about */
+    .about-text {
+        padding-top: 0;
+    }
+    .mission-text p {
+        padding: 0;
+        text-align: center;
+    }
+    .mission-img img {
+        border-radius: 100px;
+        height: 260px;
+        display: none;
+    }
+    /* about */
+    /* services */
+    .student-c-img img {
+        border-radius: 20px;
+        height: 360px;
+        display: none;
+    }
+    /* services */
+
+    /* contact */
+    .map iframe{
+        height: 230px;
+    }
+    /* contact */
+}
+
+@media (min-width: 576px) and (max-width: 766.98px) {
+        /* index */
+    .banner-content {
+        position: absolute;
+        top: 66%;
+        width: auto;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .banner-content h2 {
+        font-size: 22px;
+        padding-bottom: 20px;
+        width: 420px;
+    }
+    #banner {
+        height: 400px;
+    }
+    #about {
+        padding-top: 25px !important;
+        padding-bottom: 30px;
+    }
+    .about-content {
+        padding: 0;
+    }
+    .about-img img {
+        height: 246px;
+        border-radius: 20px;
+        box-shadow: 1px 1px 1px 0 grey;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .course-img img {
+        height: 190px;
+        transition: 0.4s ease-in-out;
+    }
+    .banner-content a {
+        padding: 6px 14px;
+        font-size: 15px;
+        background-color: white;
+        color: black;
+        transition: 0.4s ease-in-out;
+        border-radius: 5px;
+        background: linear-gradient(to right, #B88746, grey);
+        animation: gradientAnimation 3s infinite;
+    }
+    .studytown-head-main p {
+        color: grey;
+        font-weight: 400;
+        width: auto;
+        margin: auto;
+    }
+    #services {
+        padding-top: 36px;
+        background: linear-gradient(to right, #b88746ee, rgba(255, 255, 255, 0.963)) !important;
+        padding-bottom: 30px;
+    }
+    .next {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        font-size: 25px;
+        cursor: pointer;
+        z-index: 9;
+        background: #000000ab;
+        color: white;
+        padding: 5px;
+    }
+    .prev {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        font-size: 25px;
+        cursor: pointer;
+        z-index: 9;
+        background: #000000ab;
+        color: white;
+        padding: 5px;
+    }
+    .book-inner {
+        padding: 40px;
+        display: block;
+        gap: 50px;
+        align-items: center;
+        box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
+        -webkit-box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
+        border-radius: 10px;
+    }
+    .navbar {
+        position: fixed;
+        width: 100%;
+        z-index: 999;
+        background-color: white;
+    }
+    .navbar-brand img {
+        width: 90px !important;
+        height: 60px;
+    }
+    /* index */
+
+     /* about */
+     .about-text {
+        padding-top: 0;
+    }
+    .mission-text p {
+        padding: 0;
+        text-align: center;
+    }
+    .mission-img img {
+        border-radius: 100px;
+        height: 260px;
+        display: none;
+    }
+    /* about */
+     /* services */
+     .student-c-img img {
+        border-radius: 20px;
+        height: 360px;
+        display: none;
+    }
+    /* services */
+
+}
+
+@media (min-width: 767px) and (max-width: 991.98px) {
+    .footer-logo img {
+        height: 89px;
+    }
+    .book-inner {
+        padding: 40px;
+        display: block;
+        gap: 21px;
+        align-items: center;
+        box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
+        -webkit-box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
+        border-radius: 10px;
+    }
+    .about-img img {
+        height: 246px;
+        border-radius: 20px;
+        box-shadow: 1px 1px 1px 0 grey;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+      /* about */
+      .about-text {
+        padding-top: 0;
+    }
+    .mission-text p {
+        padding: 0;
+        text-align: center;
+    }
+    .mission-img img {
+        border-radius: 100px;
+        height: 260px;
+        display: none;
+    }
+    /* about */
+     /* services */
+     .student-c-img img {
+        border-radius: 20px;
+        height: 360px;
+        display: none;
+    }
+    /* services */
+}
