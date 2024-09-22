@@ -3,7 +3,7 @@ name: FTP Deploy
 on:
   push:
     branches:
-      - master  # Triggers deployment on push to the 'master' branch
+      - master  # Triggers the workflow on push to the 'master' branch
 
 jobs:
   ftp-deploy:
@@ -24,19 +24,13 @@ jobs:
           password: '0=X-3#YS@p6U'
           port: 21
           protocol: ftps  # Use 'ftp' if the server doesn't support FTPS
-          local-dir: ./   # The directory to upload from, usually the root of your repo
-          server-dir: /path/to/your/project/   # Directory on your server (adjust this)
+          local-dir: ./   # Upload all files from the root directory of the repo
+          server-dir: /path/to/your/project/  # Change to the correct path on your server
           exclude: |
-            .git*
-            .github*
-            vendor/
-            node_modules/
-            storage/logs/
-            storage/debugbar/
-          exclude-method: ignore  # Exclude the specified files/directories from deployment
-
-      # Step 3: Clean up old files on the server (optional, to prevent unused files from accumulating)
-      - name: Clean up old files
-        run: |
-          echo "Cleaning up old files on the server..."
-          # Customize this step based on your specific cleanup needs
+            .git*              # Exclude .git directory
+            .github*           # Exclude GitHub actions/workflows
+            node_modules/      # Exclude node_modules (if using npm)
+            vendor/            # Exclude vendor directory if you run Composer install on the server
+            storage/logs/      # Exclude logs
+            storage/debugbar/  # Exclude debugbar files
+          exclude-method: ignore  # Ignore these files instead of deleting them from the server
