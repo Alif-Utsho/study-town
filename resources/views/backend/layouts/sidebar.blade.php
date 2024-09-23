@@ -14,15 +14,21 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-        <a class=" nav-link" href="{{ route('dashboard') }}">
+        <a class="nav-link" href="{{ route('dashboard') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
 
     <li class="nav-item">
-        <a class=" nav-link" href="{{ route('application.manage') }}">
+        <a class="nav-link" href="{{ route('application.manage') }}">
             <i class="fas fa-fw fa-tasks"></i>
             <span>Applications</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('appointment.manage') }}">
+            <i class="fas fa-fw fa-calendar-alt"></i>
+            <span>Appointments</span></a>
     </li>
 
     <!-- Divider -->
@@ -33,7 +39,7 @@
         Contents
     </div>
 
-    <li class="nav-item">
+    <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#courses"
             aria-expanded="true" aria-controls="courses">
             <i class="fas fa-fw fa-book"></i>
@@ -136,6 +142,12 @@
         <a class="nav-link" href="{{ route('contact.edit') }}">
             <i class="fas fa-fw fa-address-book"></i>
             <span>Contacts</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('socialicon.manage') }}">
+            <i class="fas fa-fw fa-link"></i>
+            <span>Social Links</span></a>
     </li>
 
 

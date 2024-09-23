@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Frontent;
 
 use App\Http\Controllers\Controller;
 use App\Mail\ApplicationSubmitted;
+use App\Mail\AppointmentSubmitted;
 use App\Models\About;
 use App\Models\Aboutsection;
 use App\Models\Application;
+use App\Models\Appointment;
 use App\Models\Course;
 use App\Models\Service;
 use Illuminate\Http\Request;
@@ -72,6 +74,29 @@ class FrontendController extends Controller
         Mail::to($adminEmail)->send(new ApplicationSubmitted($validatedData));
 
         toastr()->success('We Have Received Your Application', 'Thank Your');
+        return redirect()->back();
+    }
+
+    public function appointmentsubmit(Request $request){
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:200',
+            'email' => 'required|email|max:200',
+            'phone' => 'required|string|max:15',
+            'date' => 'required',
+        ]);
+
+
+        $appointment = new Appointment();
+        $appointment->name = $validatedData['name'];
+        $appointment->email = $validatedData['email'];
+        $appointment->phone = $validatedData['phone'];
+        $appointment->date = $validatedData['date'];
+        $appointment->save();
+
+        $adminEmail = 'ashahriar29@gmail.com';
+        Mail::to($adminEmail)->send(new AppointmentSubmitted($validatedData));
+
+        toastr()->success('Your Appointment are Scheduled. We\'ll contact soon', 'Thank Your');
         return redirect()->back();
     }
 }

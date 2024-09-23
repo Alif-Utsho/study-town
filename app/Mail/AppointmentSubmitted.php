@@ -9,19 +9,15 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class ApplicationSubmitted extends Mailable
+class AppointmentSubmitted extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     */
+    public $appointment;
 
-    public $application;
-    
-    public function __construct($application)
+    public function __construct($appointment)
     {
-        $this->application = $application;
+        $this->appointment = $appointment;
     }
 
     /**
@@ -30,7 +26,7 @@ class ApplicationSubmitted extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'New Application Submitted',
+            subject: 'New Appointment Scheduled',
         );
     }
 
@@ -40,7 +36,7 @@ class ApplicationSubmitted extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.application_submitted',
+            view: 'emails.appointment_submitted',
         );
     }
 

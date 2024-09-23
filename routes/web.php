@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\AboutsectionController;
 use App\Http\Controllers\Backend\ApplicationController;
+use App\Http\Controllers\Backend\AppointmentController;
 use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\ConcernController;
 use App\Http\Controllers\Backend\ContactController;
@@ -33,6 +34,7 @@ Route::get('/courses', [FrontendController::class, 'course']);
 Route::get('/contact', [FrontendController::class, 'contact']);
 Route::get('/apply', [FrontendController::class, 'apply']);
 Route::post('/application-submit', [FrontendController::class, 'applicationsubmit'])->name('application.submit');
+Route::post('/appointment-submit', [FrontendController::class, 'appointmentsubmit'])->name('appointment.submit');
 
 
 Route::middleware('guest')->group(function () {
@@ -94,6 +96,17 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::post('generalsetting/update/{id}', [GeneralsettingController::class, 'update'])->name('generalsetting.update');
 
     Route::get('application/manage', [ApplicationController::class, 'manage'])->name('application.manage');
+    Route::get('appointment/manage', [AppointmentController::class, 'manage'])->name('appointment.manage');
+
+
+    Route::get('socialicon/manage', [AboutsectionController::class, 'manage'])->name('socialicon.manage');
+    Route::get('socialicon/create', [AboutsectionController::class, 'create'])->name('socialicon.create');
+    Route::post('socialicon/store', [AboutsectionController::class, 'store'])->name('socialicon.store');
+    Route::get('socialicon/edit/{id}', [AboutsectionController::class, 'edit'])->name('socialicon.edit');
+    Route::post('socialicon/update/{id}', [AboutsectionController::class, 'update'])->name('socialicon.update');
+    Route::get('socialicon/delete/{id}', [AboutsectionController::class, 'destroy'])->name('socialicon.delete');
+    Route::get('socialicon/toggle-status/{id}', [AboutsectionController::class, 'toggleStatus'])->name('socialicon.toggleStatus');
+
 
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 });

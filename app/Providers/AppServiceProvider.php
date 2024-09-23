@@ -6,6 +6,7 @@ use App\Models\Concern;
 use App\Models\Contact;
 use App\Models\Course;
 use App\Models\Generalsetting;
+use App\Models\Socialicon;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -34,5 +35,8 @@ class AppServiceProvider extends ServiceProvider
 
         $application_courses = Course::whereStatus(1)->get();
         view()->share('application_courses', $application_courses);
+
+        $socialicons = Socialicon::whereStatus(1)->get();
+        view()->share('socialicons', $socialicons);
     }
 }
