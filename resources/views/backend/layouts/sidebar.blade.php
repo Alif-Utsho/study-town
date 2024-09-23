@@ -19,6 +19,12 @@
             <span>Dashboard</span></a>
     </li>
 
+    <li class="nav-item">
+        <a class=" nav-link" href="{{ route('application.manage') }}">
+            <i class="fas fa-fw fa-tasks"></i>
+            <span>Applications</span></a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider">
 

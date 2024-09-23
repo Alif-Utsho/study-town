@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\AboutsectionController;
+use App\Http\Controllers\Backend\ApplicationController;
 use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\ConcernController;
 use App\Http\Controllers\Backend\ContactController;
@@ -92,6 +93,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('generalsetting/edit', [GeneralsettingController::class, 'edit'])->name('generalsetting.edit');
     Route::post('generalsetting/update/{id}', [GeneralsettingController::class, 'update'])->name('generalsetting.update');
 
+    Route::get('application/manage', [ApplicationController::class, 'manage'])->name('application.manage');
 
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 });

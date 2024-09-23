@@ -30,7 +30,7 @@
             <div class="col-lg-6">
                 <div class="student-c-img">
                     <img
-                        src="{{ asset($service->image) }}"
+                        src="{{ asset($service->image) }"
                         class="w-100"
                         alt="" />
                 </div>
@@ -41,7 +41,7 @@
             <div class="col-lg-6">
                 <div class="student-c-img">
                     <img
-                        src="{{ asset($service->image) }}"
+                        src="{{ asset($service->image) }"
                         class="w-100"
                         alt="" />
                 </div>
