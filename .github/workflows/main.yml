@@ -25,6 +25,7 @@ jobs:
           port: 21
           protocol: ftps  # Use 'ftp' if your server doesn't support FTPS
           local-dir: ./   # Root of your project
+          passive: true
           server-dir: /home/rscollec/studytown.rscollectionbd.com/  # Ensure this is the correct path and ends with /
           exclude: |
             **/.git*              # Exclude .git folder and all related files
