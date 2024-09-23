@@ -22,9 +22,9 @@ jobs:
           server: 'ftp.rscollectionbd.com'
           username: 'StudyTown@studytown.rscollectionbd.com'
           password: '0=X-3#YS@p6U'
-          protocol: ftp  # Use 'ftp' if your server doesn't support FTPS
+          protocol: sftp  # Use 'ftp' if your server doesn't support FTPS
           local-dir: ./   # Root of your project
-          passive: true
+          passive: false
           server-dir: /home/rscollec/studytown.rscollectionbd.com/  # Ensure this is the correct path and ends with /
           log-level: verbose  # Enable detailed logs for debugging
           exclude: |
