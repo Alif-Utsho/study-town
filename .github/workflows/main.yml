@@ -1,0 +1,35 @@
+name: FTP Deploy
+
+on:
+  push:
+    branches:
+      - master  # Adjust according to your branch
+
+jobs:
+  ftp-deploy:
+    name: Deploy to FTP Server
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: FTP Deploy Action
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.1
+        with:
+          server: 'ftp.rscollectionbd.com'
+          username: 'StudyTown@studytown.rscollectionbd.com'
+          password: '0=X-3#YS@p6U'
+          port: 21
+          protocol: ftps  # Use 'ftp' if your server doesn't support FTPS
+          local-dir: ./   # Root of your project
+          server-dir: /home/rscollec/studytown.rscollectionbd.com/  # Ensure this is the correct path and ends with /
+          exclude: |
+            **/.git*              # Exclude .git folder and all related files
+            **/.github*           # Exclude .github folder (CI workflows)
+            **/node_modules*      # Exclude node_modules if applicable
+            **/vendor*            # Exclude vendor if you run composer install on the server
+            **/storage/logs*      # Exclude logs
+            **/storage/debugbar*  # Exclude debugbar files
