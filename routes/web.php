@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\CourseController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\GeneralsettingController;
 use App\Http\Controllers\Backend\ServiceController;
+use App\Http\Controllers\Backend\SocialiconController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Frontent\FrontendController;
 use Illuminate\Support\Facades\Route;
@@ -99,13 +100,13 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('appointment/manage', [AppointmentController::class, 'manage'])->name('appointment.manage');
 
 
-    Route::get('socialicon/manage', [AboutsectionController::class, 'manage'])->name('socialicon.manage');
-    Route::get('socialicon/create', [AboutsectionController::class, 'create'])->name('socialicon.create');
-    Route::post('socialicon/store', [AboutsectionController::class, 'store'])->name('socialicon.store');
-    Route::get('socialicon/edit/{id}', [AboutsectionController::class, 'edit'])->name('socialicon.edit');
-    Route::post('socialicon/update/{id}', [AboutsectionController::class, 'update'])->name('socialicon.update');
-    Route::get('socialicon/delete/{id}', [AboutsectionController::class, 'destroy'])->name('socialicon.delete');
-    Route::get('socialicon/toggle-status/{id}', [AboutsectionController::class, 'toggleStatus'])->name('socialicon.toggleStatus');
+    Route::get('socialicon/manage', [SocialiconController::class, 'manage'])->name('socialicon.manage');
+    Route::get('socialicon/create', [SocialiconController::class, 'create'])->name('socialicon.create');
+    Route::post('socialicon/store', [SocialiconController::class, 'store'])->name('socialicon.store');
+    Route::get('socialicon/edit/{id}', [SocialiconController::class, 'edit'])->name('socialicon.edit');
+    Route::post('socialicon/update/{id}', [SocialiconController::class, 'update'])->name('socialicon.update');
+    Route::get('socialicon/delete/{id}', [SocialiconController::class, 'destroy'])->name('socialicon.delete');
+    Route::get('socialicon/toggle-status/{id}', [SocialiconController::class, 'toggleStatus'])->name('socialicon.toggleStatus');
 
 
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
