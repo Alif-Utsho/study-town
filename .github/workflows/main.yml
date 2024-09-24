@@ -17,15 +17,16 @@ jobs:
 
       # Step 2: FTP Deploy Action
       - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.1
+        uses: SamKirkland/FTP-Deploy-Action@v4.2.0
         with:
           server: 'ftp.rscollectionbd.com'
           username: 'StudyTown@studytown.rscollectionbd.com'
           password: '0=X-3#YS@p6U'
-          port: 21
           protocol: ftps  # Use 'ftp' if your server doesn't support FTPS
           local-dir: ./   # Root of your project
+          passive: false
           server-dir: /home/rscollec/studytown.rscollectionbd.com/  # Ensure this is the correct path and ends with /
+          log-level: verbose  # Enable detailed logs for debugging
           exclude: |
             **/.git*              # Exclude .git folder and all related files
             **/.github*           # Exclude .github folder (CI workflows)
