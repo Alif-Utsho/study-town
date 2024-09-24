@@ -52,7 +52,7 @@ class SocialiconController extends Controller
     public function update(Request $request, $id)
     {
         $socialicon = Socialicon::findOrFail($id);
-
+        
         $request->validate([
             'link' => 'required|string|max:200',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',

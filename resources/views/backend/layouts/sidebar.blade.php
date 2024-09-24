@@ -39,7 +39,7 @@
         Contents
     </div>
 
-    <li class="nav-item active">
+    <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#courses"
             aria-expanded="true" aria-controls="courses">
             <i class="fas fa-fw fa-book"></i>
