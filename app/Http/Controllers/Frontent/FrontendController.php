@@ -10,6 +10,8 @@ use App\Models\Aboutsection;
 use App\Models\Application;
 use App\Models\Appointment;
 use App\Models\Course;
+use App\Models\Homeoffer;
+use App\Models\Homesection;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -18,7 +20,10 @@ class FrontendController extends Controller
 {
     public function index() {
         $courses = Course::where('front_view', 1)->limit(4)->get();
-        return view('frontend.index', compact('courses'));
+
+        $homesection = Homesection::first();
+        $homeoffers = Homeoffer::whereStatus(1)->get();
+        return view('frontend.index', compact('courses', 'homesection', 'homeoffers'));
     }
 
     public function about() {
@@ -74,7 +79,7 @@ class FrontendController extends Controller
         Mail::to($adminEmail)->send(new ApplicationSubmitted($validatedData));
 
         toastr()->success('We Have Received Your Application', 'Thank Your');
-        return redirect()->back();
+        return redirect()->back()->with('success','We Have Received Your Application, Thank You');
     }
 
     public function appointmentsubmit(Request $request){
@@ -96,7 +101,7 @@ class FrontendController extends Controller
         $adminEmail = 'ashahriar29@gmail.com';
         Mail::to($adminEmail)->send(new AppointmentSubmitted($validatedData));
 
-        toastr()->success('Your Appointment are Scheduled. We\'ll contact soon', 'Thank Your');
-        return redirect()->back();
+        toastr()->success('Your Appointment are Scheduled. We\'ll contact soon');
+        return redirect()->back()->with('success', 'Your Appointment is Scheduled. We\'ll contact soon');
     }
 }

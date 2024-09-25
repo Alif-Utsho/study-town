@@ -125,8 +125,37 @@
             </div>
         </div>
     </div>
-
     <!-- book now modal -->
+
+
+    <!-- Modal -->
+    <div id="success_tic" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <a class="close" href="#" data-bs-dismiss="modal">&times;</a>
+                <div class="page-body">
+                    <div class="head">
+                        <h3 style="margin-top:5px;">{{ session('success') }}</h3>
+                        <br>
+                    </div>
+
+                    <h1 style="text-align:center;">
+                        <div class="checkmark-circle">
+                            <div class="background"></div>
+                            <div class="checkmark draw"></div>
+                        </div>
+                        <h1>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <button type="button" class="btn btn-info btn-lg" data-bs-toggle="modal" data-bs-target="#success_tic">Open Modal</button>
+
 
     <!-- footer -->
     <footer id="footer">
@@ -162,6 +191,9 @@
     </footer>
     <!-- footer -->
 
+
+
+
     <script src="frontend/js/jquery-1.12.4.min.js"></script>
     <script src="frontend/js/bootstrap.bundle.min.js"></script>
     <script src="frontend/js/slick.min.js"></script>
@@ -170,6 +202,15 @@
     <script src="frontend/js/waypoints.min.js"></script>
     <script src="frontend/https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="frontend/js/custom.js"></script>
+
+    @if (session('success'))
+    <script>
+        $(document).ready(function() {
+            var successModal = new bootstrap.Modal(document.getElementById('success_tic'));
+            successModal.show();
+        });
+    </script>
+    @endif
 </body>
 
 </html>

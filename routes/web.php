@@ -10,6 +10,8 @@ use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\CourseController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\GeneralsettingController;
+use App\Http\Controllers\Backend\HomeofferController;
+use App\Http\Controllers\Backend\HomesectionController;
 use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\SocialiconController;
 use App\Http\Controllers\Backend\UserController;
@@ -107,6 +109,17 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::post('socialicon/update/{id}', [SocialiconController::class, 'update'])->name('socialicon.update');
     Route::get('socialicon/delete/{id}', [SocialiconController::class, 'destroy'])->name('socialicon.delete');
     Route::get('socialicon/toggle-status/{id}', [SocialiconController::class, 'toggleStatus'])->name('socialicon.toggleStatus');
+
+    Route::get('homesection/edit', [HomesectionController::class, 'edit'])->name('homesection.edit');
+    Route::post('homesection/update/{id}', [HomesectionController::class, 'update'])->name('homesection.update');
+
+    Route::get('homeoffer/manage', [HomeofferController::class, 'manage'])->name('homeoffer.manage');
+    Route::get('homeoffer/create', [HomeofferController::class, 'create'])->name('homeoffer.create');
+    Route::post('homeoffer/store', [HomeofferController::class, 'store'])->name('homeoffer.store');
+    Route::get('homeoffer/edit/{id}', [HomeofferController::class, 'edit'])->name('homeoffer.edit');
+    Route::post('homeoffer/update/{id}', [HomeofferController::class, 'update'])->name('homeoffer.update');
+    Route::get('homeoffer/delete/{id}', [HomeofferController::class, 'destroy'])->name('homeoffer.delete');
+    Route::get('homeoffer/toggle-status/{id}', [HomeofferController::class, 'toggleStatus'])->name('homeoffer.toggleStatus');
 
 
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');

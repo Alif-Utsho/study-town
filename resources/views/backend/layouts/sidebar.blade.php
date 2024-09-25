@@ -89,6 +89,20 @@
     </div>
 
     <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#aboutCollapse"
+            aria-expanded="true" aria-controls="aboutCollapse">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Home</span>
+        </a>
+        <div id="aboutCollapse" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('homesection.edit') }}">Sections</a>
+                <a class="collapse-item" href="{{ route('homeoffer.manage') }}">Offers</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
         <a class="nav-link" href="{{ route('about.edit') }}">
             <i class="fas fa-fw fa-address-card"></i>
             <span>About</span></a>

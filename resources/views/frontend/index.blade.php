@@ -3,9 +3,8 @@
 @section('content')
 <section
     style="
-        background: url(./frontend/images/campus-347285_1280.jpg) no-repeat center
-          center/cover;
-      "
+        background: url('{{ asset(e($homesection->banner)) }}') no-repeat center center/cover;
+    "
     id="banner">
     <div class="over-lay"></div>
     <div class="container">
@@ -13,8 +12,7 @@
             <div class="col-lg-12">
                 <div class="banner-content text-center">
                     <h2>
-                        Study Town: Simplifying the Path to Higher Education with
-                        Support and Adaptable Learning Plans
+                        {{ $homesection->title }}
                     </h2>
                     <a href="/apply">Apply Now</a>
                     <!-- <p>No Qualification Needed</p> -->
@@ -31,21 +29,13 @@
         <div class="row gapp">
             <div class="col-lg-5 col-md-5 order-2 order-lg-1">
                 <div class="about-img">
-                    <img src="frontend/images/about.webp" class="w-100" alt="" />
+                    <img src="{{ asset($homesection->about_image) }}" class="w-100" alt="" />
                 </div>
             </div>
             <div class="col-lg-7 col-md-7 order-1 order-lg-2">
                 <div class="about-content">
-                    <h3>Welcome to Study Town</h3>
-                    <p>
-                        At Study Town, we are dedicated to helping British or EU
-                        citizens, as well as individuals with settlement or
-                        pre-settlement status, achieve their academic aspirations. We
-                        provide expert application assistance and personalized course
-                        selection, tailored to your goals. With flexible class schedules
-                        and strong partnerships with universities, we are committed to
-                        ensuring your success.
-                    </p>
+                    <h3>{{ $homesection->about_title }}</h3>
+                    {!! $homesection->about_text !!}
                     <a href="/about">See more</a>
                 </div>
             </div>
@@ -68,87 +58,21 @@
             </div>
         </div>
         <div class="row gapp mt-5">
+            @foreach($homeoffers as $homeoffer)
             <div class="col-lg-4">
                 <div class="service-inner">
                     <div class="services-icon">
-                        <img src="frontend/images/s1.png" alt="" />
+                        <img src="{{ asset($homeoffer->image) }}" alt="" />
                     </div>
                     <div class="services-content">
-                        <h4>Free Counselling</h4>
+                        <h4>{{ $homeoffer->name }}</h4>
                         <p>
-                            We offer complimentary counseling to our students, provided by
-                            expert counselors who have graduated from UK universities.
+                            {{ $homeoffer->details }}
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="service-inner">
-                    <div class="services-icon">
-                        <img src="frontend/images/s2.png" alt="" />
-                    </div>
-                    <div class="services-content">
-                        <h4>Student Admission Services</h4>
-                        <p>
-                            Professional guidance throughout the application process, along with tailored advice to help you select the right courses.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="service-inner">
-                    <div class="services-icon">
-                        <img src="frontend/images/s3.png" alt="" />
-                    </div>
-                    <div class="services-content">
-                        <h4>Compliance Assistance</h4>
-                        <p>
-                            Our dedicated compliance team is here to guide students
-                            through every step of the visa process.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="col-lg-4">
-                <div class="service-inner">
-                <div class="services-icon">
-                    <img src="frontend/images/s4.png" alt="" />
-                </div>
-                <div class="services-content">
-                    <h4>Student Accommodation Services</h4>
-                    <p>
-                    offers top-quality student accommodation services at an affordable price.
-                    </p>
-                </div>
-                </div>
-            </div> -->
-            <div class="col-lg-4">
-                <div class="service-inner">
-                    <div class="services-icon">
-                        <img src="frontend/images/s5.png" alt="" />
-                    </div>
-                    <div class="services-content">
-                        <h4>Partner University Services</h4>
-                        <p>
-                            Our services are not limited to students; we also offer a range of solutions for the universities we partner with.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="service-inner">
-                    <div class="services-icon">
-                        <img src="frontend/images/s6.png" alt="" />
-                    </div>
-                    <div class="services-content">
-                        <h4>End-to-End Services
-                        </h4>
-                        <p>
-                            Our services are ongoing and do not end at a specific point. We are committed to providing continued support and assistance, even after course completion in the UK, if required
-                        </p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
     </div>
